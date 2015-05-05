@@ -1,0 +1,19 @@
+{
+  "name": "Healthwrights.org",
+  "version": "1.0.0",
+  "description": "Healthwrights",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.healthwrights.org:healthwrights.org.git"
+  },
+  "author": "dgk",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-bower": "0.0.10",
+    "gulp-sass": "^1.3.3"
+  }
+}

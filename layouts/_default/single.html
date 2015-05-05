@@ -1,0 +1,6 @@
+{{ template "partials/header.html" . }}
+<h1>{{ .Title }} - {{ .Params.location }}</h1>
+<h4>{{ .Params.subtitle }}</h4>
+</br>
+{{ .Content }}
+{{ template "partials/footer.html" . }}

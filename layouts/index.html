@@ -1,0 +1,17 @@
+{{ template "partials/header.html" . }}
+  <div id="article">
+  <h1>{{.Title}}</h1>
+  <h3>Newsletters</h3>
+  <ul class="newsletters">
+      {{ range $index, $page := where .Data.Pages "Section" "newsletters" }}
+      <li>{{ .Params.newsletter }} - <a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list"> - {{ .Date.Format "Jan, 2006" }}</time></li>
+      {{ end }}
+  <h3>Other Docs</h3>
+      {{ range $index, $page := where .Data.Pages "Section" "other" }}
+      <li>{{ .Params.newsletter }} <a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list"> - {{ .Date.Format "Jan, 2006" }}</time></li>
+      {{ end }}
+      <li><a href="/misc/sample.html">Sample Page</a></li>
+      <li><a href="/fonts/foundation-icons/preview.html">Foundation Icon Fonts</a></li>
+  </ul>
+  </div>
+{{ template "partials/footer.html" }}

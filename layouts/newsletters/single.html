@@ -1,0 +1,8 @@
+{{ template "partials/header.html" . }}
+<h3 id=nlsm>Newsletter from the Sierra Madre #{{ .Params.newsletter }}</h3>
+{{ .Date.Format "January, 2006" }}</br>
+<h1>{{ .Title }}</h1>
+<h2>{{ .Params.subtitle }}</h2>
+ </br>
+{{ .Content }}
+{{ template "partials/footer.html" . }}

@@ -1,0 +1,9 @@
+{{ template "partials/header.html" . }}
+<div class=photodoc>
+<h1>{{ .Params.typetitle }}</h1>
+<h3>From {{ .Params.location }} </h3>
+<h2>Part  {{ .Params.part }} - {{ .Title }}</h2>
+{{ .TableOfContents }}
+{{ .Content }}
+</div>  
+{{ template "partials/footer.html" . }}

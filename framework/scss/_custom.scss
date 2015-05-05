@@ -1,0 +1,378 @@
+/* see custom.scss */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+// $medium-down: "#{$screen} and (max-width:#{upper-bound($medium-range)})" !default;
+$full-width-pics: "#{$screen} and (max-width:500px)" !default;
+
+.row {
+  max-width: 1200px;
+}
+
+body
+{
+  color:white;
+  width:100%;
+ /*  border-top:solid #d90006; */
+  border-width:4px;
+  background-color: $body-color;
+  color:$body-textcolor;
+}
+
+
+.main-section {
+
+}
+
+//Layout Areas
+
+.top-bar {
+height: 45px;
+}
+
+.header {
+  background-color:$header-bg-color;
+  color:$default-textcolor;
+  padding:5px;
+ }
+
+.panel {
+  background-color: $default-color;
+  color:$default-textcolor;
+}
+
+.postscript {
+  margin-top:4em;
+  background-color: $color-complement-1;
+  color:$default-textcolor;
+  padding:1em;
+}  
+
+.callout {
+  background-color: $color-complement-1;
+  color:$default-textcolor;
+  padding:1em;
+}
+
+.box  {
+  padding:1em 1em 0em 1em; 
+  margin:0 1.5em 0 1.5em; 
+  max-width:30%;
+//  padding-right:1.5em;
+}
+
+
+.english p {
+  background-color: $color-secondary-2-2;
+  padding:1em;
+}
+
+.english.current p {
+  background-color: red;
+  color: white;
+}
+
+
+
+
+
+
+
+//Google Translate Button
+    div#google_translate_element div.goog-te-gadget-simple {
+      background-color:$topbar-bg-color;
+      border-width:0px;
+      padding-margin-left:20px;
+      }
+
+    div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span{
+      color:white;
+      }
+    
+    div#google_translate_element div.goog-te-gadget-simple a.goog-te-menu-value span:hover{
+    
+      }
+
+
+
+
+
+////////////// Typography
+// defaults
+html { font-size: 100%; } 
+body { font-size: 1em; } 
+
+// basic settings
+$basefontsize: 1em;
+$sitefontpercent: 110;
+$basefontweight:400; //normal
+
+body,h1,h2,h3,h4,h5,h6,p
+{
+  font-family:"Helvetica Neue", helvetica, "Open Sans", sans-serif;
+  color:$default-textcolor;
+}
+
+@mixin font_adjust($percent) {
+  font-size: $basefontsize  * $percent * $sitefontpercent / 100 / 100;
+}
+
+// @media #{$medium-up}  {  $sitefontpercent: 120; }
+
+// Font size for all except small
+ h1, h2 { 
+  @include font_adjust(220); 
+ font-weight:700;
+}
+
+ h3, h4 { 
+  @include font_adjust(150); 
+  font-weight:600;
+ }
+
+ body, p { 
+  @include font_adjust(100); 
+  font-weight:$basefontweight;
+}
+
+ $sitefontpercent: 100; 
+
+@media #{$small-only} {  
+
+h1, h2 { 
+  @include font_adjust(200); 
+ font-weight:700;
+}
+
+ h3, h4 { 
+  @include font_adjust(150); 
+  font-weight:600;
+ }
+
+ body, p { 
+  @include font_adjust(100); 
+  font-weight:$basefontweight;  
+}
+
+}
+
+//Newsletter from the Sierra Madre XX - Title
+#nlsm {
+  font-style: italic;
+  color:$color-primary-3;
+}
+
+
+h1, h3 { text-transform: uppercase;}  // all caps
+
+// h2, h4 {text-transform: capitalize;}  //First letter caps
+
+
+h1 a,h2 a,h3 a,h4 a
+{
+  color:#428fe0
+}
+
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover
+{
+  color:#29598c
+}
+
+
+hr {
+  border-top-width:5px;
+  border-top-color: $border-color;
+}
+
+
+/////////////////////////////////////
+// Figure (Picture/Image) Formatting
+
+figure {
+  display:table; // so that caption can wrap and be centered on photo
+  padding:0;
+ // border: 2px $fig-bd-color solid;
+  }
+
+figure img {
+  width:100%;  //for firefox ie
+ // border: 2px $fig-bd-color solid;
+  }
+
+.imagebreak {
+  clear:both
+} 
+
+
+figure.left {
+  // float left set in foundatin for .left class
+  padding:0 1.5em 0 0; 
+   margin:0; 
+  max-width:49%;
+//  padding-right:2em;
+}
+
+
+
+figure.right{
+  // float right set in foundatin for .right class
+  max-width: 49%;
+  padding:0 0 0 1em;
+  // padding-left:2em;
+}
+
+// adjust width if desired
+figure.small {
+  max-width:20%;
+}
+
+// adjust width if desired
+figure.medium {
+  max-width:35%;
+}
+
+
+figure.center{
+  max-width:66%;
+  margin-left: 17%;
+  margin-right: 17%;
+}
+
+figure.multi, figure.twoup {
+float:left;
+margin:0 5% 0 5%;
+max-width:40%
+}
+
+figure.threeup {
+float:left;
+margin:0 3% 0 0%;
+max-width:30%
+}
+
+// @media #{$small-only} { 
+
+
+figcaption{
+  display:table-caption;
+  caption-side:bottom;
+  padding:0 0.5em 0 0.5em;
+  text-align:center;
+  // background-color:$fig-caption-color;
+}
+
+figcaption p{
+  margin-bottom:0px;
+  @include font_adjust(80); 
+  font-weight:$basefontweight * 1.5;
+  font-style:italic;
+ }
+
+ .clear {
+  clear: both;
+ }
+ .left {
+  float:  !important;
+}
+
+//////////////
+
+.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+    width: 100% !important;
+}
+
+
+///////////////
+
+.photodoc p {
+  width:80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+///////
+div.icon-bar > * {
+  font-size: 1rem;
+  padding: 0rem;
+}
+
+#page.top-bar {
+  background:white;
+}
+
+#credits p{
+  margin-bottom:0px;
+  font-size:.75rem;
+  font-style:italic;
+ }
+
+/// Facebook
+
+/* ------------------------------------- 
+    ELEMENTS 
+------------------------------------- */
+#fb a { color: #2BA6CB;}
+
+#fb.btn {
+  text-decoration:none;
+  color: #275183;
+  background-color: #FFF8CA;
+  padding:10px 16px;
+  font-weight:bold;
+  margin-right:10px;
+  text-align:center;
+  cursor:pointer;
+  display: inline-block;
+}
+
+//
+#fb p {
+    font-weight:bold;
+      font-size:1em;
+ }
+
+#fb.box { max-width:50%;  margin:0 25% 0 25%; padding:1em;}
+
+#fb.callout a {
+  font-weight:bold;
+  color: #2BA6CB;
+  padding:0 1em 0 1em;
+}
+
+table.social {
+/*  padding:15px; */
+  background-color: #ebebeb;
+  
+}
+.social .soc-btn {
+//  padding: 3px 7px;
+  font-size:1em;
+  margin-bottom:10px;
+  text-decoration:none;
+  color: #FFF;font-weight:bold;
+  display:block;
+  text-align:center;
+}
+a.fb { background-color: #3B5998!important; }
+a.tw { background-color: #1daced!important; }
+a.gp { background-color: #DB4A39!important; }
+a.ms { background-color: #000!important; }
+
+.sidebar .soc-btn { 
+  display:block;
+  width:100%;
+}
+
+
+//////////// stretch all when smaller.
+@media #{$full-width-pics} { 
+
+
+  figure.center, figure.right, figure.left, figure.multi, figure.small, figure.threeup, figure.twoup, .box, #fb.box   {
+    float:none;
+    max-width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}

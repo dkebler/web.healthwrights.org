@@ -1,0 +1,8 @@
+---
+baseurl: ""
+languageCode: "en-us"
+title: "Healthwrights"
+params:
+	CSS_Path: "/static/framework/css"
+	JS_Path: "/static/framework/js"
+...
